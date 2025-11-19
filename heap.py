@@ -1,4 +1,6 @@
 # a chambear
+# a chambear
+# todo el mundo a chambear
 import pygame
 from random import randint
 from time import sleep
