@@ -63,9 +63,10 @@ def add():
         y -= CELL_SIZE + 10
 
 def draw_node():
-    coor_y = 100 
+    coor_y = 50 
     counter = 0
-    coor_x = 150
+    coor_x = 200
+    k = 1
     for i in heap:
         pygame.draw.circle(screen, BLUE, (coor_x, coor_y), 20)
         font = pygame.font.Font(None, 36)
@@ -73,16 +74,14 @@ def draw_node():
         text_rect = text.get_rect(center=(coor_x, coor_y))
         screen.blit(text, text_rect)
         counter += 1
-        coor_x += 150
-        coor_y += 50
+        coor_x = 200
         if counter%2 == 0:
-            coor_x += 100
+            coor_x += 30*k
         else:
-            coor_x -= 100
+            coor_x -= 30*k
+            coor_y += 50
+        k +=1
         
-
-
-
 
 
 def main():
