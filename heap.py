@@ -62,6 +62,24 @@ def add():
         x += CELL_SIZE + 10
         y -= CELL_SIZE + 10
 
+def draw_node():
+    coor_y = 100 
+    counter = 0
+    coor_x = 150
+    for i in heap:
+        pygame.draw.circle(screen, BLUE, (coor_x, coor_y), 20)
+        font = pygame.font.Font(None, 36)
+        text = font.render(str(i), True, WHITE)
+        text_rect = text.get_rect(center=(coor_x, coor_y))
+        screen.blit(text, text_rect)
+        counter += 1
+        coor_x += 150
+        coor_y += 50
+        if counter%2 == 0:
+            coor_x += 100
+        else:
+            coor_x -= 100
+        
 
 
 
@@ -75,7 +93,7 @@ def main():
                 running = False
         screen.fill(WHITE)
         draw_grid()
-        add()
+        draw_node()
         pygame.display.update()
         sleep(2)
 main()
